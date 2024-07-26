@@ -168,7 +168,7 @@ private suspend fun AwaitPointerEventScope.forEachPointerEventUntilReleased(
 ) {
     val touchSlop = TouchSlop(viewConfiguration.touchSlop)
     do {
-        val mainEvent = awaitPointerEvent(pass = PointerEventPass.Main)
+        val mainEvent = awaitPointerEvent(pass = PointerEventPass.Initial)
         if (mainEvent.changes.fastAny { it.isConsumed }) {
             break
         }
